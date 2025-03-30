@@ -5,14 +5,9 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.Size;
-
-
-
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 
 @Data
 @AllArgsConstructor
@@ -35,7 +30,7 @@ public class Eventos {
     @Size(min = 2, max = 50, message = "El nombre del país debe tener entre 2 y 50 caracteres.")  
     private String pais;
     
-    @NotBlank(message = "El nombre del evento es obligatorio.")
+    @NotNull(message = "El nombre del evento es obligatorio.")
     @Future(message = "La fecha a ingresar debe ser mayor a la de hoy.")    
     private LocalDate fechaEvento;
 

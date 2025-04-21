@@ -23,14 +23,14 @@ public class EventosService {
     }
 
     public Eventos guardaEvento(Eventos evento){
-        if(eventos.existsById(eventos.getId())){
+        if(eventos.existsById(evento.getId())){
             throw new IllegalArgumentException("Ya existe el evento con el id: " + evento.getId());
         }
         return eventos.save(evento);       
     }
 
     public Eventos actualizar(Long id, Eventos eventosUpdated){
-        Eventos existente = eventos.findById(id).orElseThrow(() -> EventosNotFoundException(id));
+        Eventos existente = eventos.findById(id).orElseThrow(() -> new EventosNotFoundException(id));
 
         existente.setNombreEvento(eventosUpdated.getNombreEvento());
         existente.setCiudad(eventosUpdated.getCiudad());
@@ -43,7 +43,7 @@ public class EventosService {
     }
 
     public void deleted(Long id){
-        Eventos existente = eventos.findById(id).orElseThrow(() -> EventosNotFoundException(id));
+        Eventos existente = eventos.findById(id).orElseThrow(() -> new EventosNotFoundException(id));
         eventos.delete(existente);
     }
 }

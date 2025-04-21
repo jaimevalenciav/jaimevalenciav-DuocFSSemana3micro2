@@ -44,8 +44,7 @@ public class Eventos {
     @Size(min = 2, max = 50, message = "El nombre del país debe tener entre 2 y 50 caracteres.")  
     private String pais;
     
-    @NotNull(message = "La fecha del evento no puede ser nulo.")
-    @NotBlank(message = "La fecha es obligatorio.")
+    
     @Future(message = "La fecha a ingresar debe ser mayor a la de hoy.")    
     private LocalDate fechaEvento;
 

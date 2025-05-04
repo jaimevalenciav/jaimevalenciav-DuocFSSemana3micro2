@@ -3,6 +3,7 @@ import com.duocuc.eventospet.model.Eventos;
 import com.duocuc.eventospet.repository.EventosRepository;
 import com.duocuc.eventospet.exception.EventosNotFoundException;
 import java.util.List;
+import org.springframework.data.domain.Sort;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,9 +13,13 @@ public class EventosService {
     @Autowired
 
     private EventosRepository eventos;
+
+    public EventosService(EventosRepository eventos) {
+        this.eventos = eventos;
+    }
   
     public List<Eventos> allEventos() {
-        return eventos.findAll();
+        return eventos.findAll(Sort.by("id"));
     }
 
     public Eventos buscarPorId(Long id){

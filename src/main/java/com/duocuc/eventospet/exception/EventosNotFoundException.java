@@ -10,4 +10,7 @@ public class EventosNotFoundException extends RuntimeException {
         super("No se ha encontrado en nuestra base de datos los datos del evento con ID: " + id);
     }
 
+    public EventosNotFoundException(String message, Throwable cause) {
+        super(message, cause);
+    }
 }

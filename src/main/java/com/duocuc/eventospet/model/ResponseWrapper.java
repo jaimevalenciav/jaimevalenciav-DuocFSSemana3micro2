@@ -3,11 +3,14 @@ package com.duocuc.eventospet.model;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import java.time.LocalDateTime;
 import java.util.List;
+
+import org.springframework.hateoas.RepresentationModel;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @JsonPropertyOrder({"status","cantidad","timestamp","data"})
 
-public class ResponseWrapper<T> {
+public class ResponseWrapper<T> extends RepresentationModel<ResponseWrapper<T>> {
     private String status;
     private int cantidad;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")

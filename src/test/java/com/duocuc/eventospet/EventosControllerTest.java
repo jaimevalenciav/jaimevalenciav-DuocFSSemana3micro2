@@ -1,7 +1,6 @@
 package com.duocuc.eventospet;
 
 import com.duocuc.eventospet.controller.EventosController;
-
 import com.duocuc.eventospet.model.Eventos;
 import com.duocuc.eventospet.service.EventosService;
 import org.junit.jupiter.api.Test;
